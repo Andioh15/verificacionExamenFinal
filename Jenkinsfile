@@ -34,7 +34,7 @@ pipeline {
         }
     }
 
-    // 📊 ESTA SECCIÓN GENERA LAS GRÁFICAS DE TENDENCIA EN JENKINS
+    // GRÁFICAS DE TENDENCIA EN JENKINS
     post {
         always {
             // Publica los resultados de JUnit incluso si las pruebas fallan
@@ -42,10 +42,10 @@ pipeline {
             junit '**/target/surefire-reports/*.xml'
         }
         success {
-            echo '✅ Pipeline completado con éxito. Gráficas y Sonar actualizados.'
+            echo 'Pipeline completado con éxito. Gráficas y Sonar actualizados.'
         }
         failure {
-            echo '❌ El Pipeline falló. Revisa la gráfica de JUnit para ver qué prueba falló.'
+            echo 'El Pipeline falló. Revisa la gráfica de JUnit para ver qué prueba falló.'
         }
     }
 }
